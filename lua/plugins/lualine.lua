@@ -16,15 +16,15 @@ return {
       },
       sections = {
         lualine_c = {
-          { "filename", path = 1, symbols = { modified = " [+]] ", readonly = "", unnamed = "" } },
+          { "filename", path = 1, symbols = { modified = " [+] ", readonly = "", unnamed = "" } },
         },
         lualine_x = {
           -- stylua: ignore
-          {
-            function() return require("noice").api.status.command.get() end,
-            cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-            color = Util.fg("Statement"),
-          },
+          -- {
+          --   function() return require("noice").api.status.command.get() end,
+          --   cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
+          --   color = Util.fg("Statement"),
+          -- },
           -- stylua: ignore
           {
             function() return require("noice").api.status.mode.get() end,
@@ -50,5 +50,5 @@ return {
       },
       extensions = { "neo-tree", "lazy" },
     }
-  end
+  end,
 }
