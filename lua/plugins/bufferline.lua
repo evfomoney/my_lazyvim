@@ -2,7 +2,12 @@ return {
   "akinsho/bufferline.nvim",
   keys = function()
     return {
-      { "<leader>bp", "<cmd>BufferLinePick<CR>", desc = "bufferPeek" }
+      { "<leader>bp", "<cmd>BufferLinePick<CR>", desc = "bufferPeek" },
     }
-  end
+  end,
+  opts = {
+    options = {
+      always_show_bufferline = true,
+    },
+  },
 }
