@@ -1,3 +1,3 @@
 return {
-  { "folke/tokyonight.nvim", enable = false },
+  {"folke/tokyonight.nvim", enable=false}
 }

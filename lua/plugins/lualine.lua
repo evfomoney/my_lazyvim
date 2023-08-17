@@ -15,7 +15,9 @@ return {
         disabled_filetypes = { statusline = { "dashboard", "alpha" } },
       },
       sections = {
-        lualine_b = { "branch" },
+        lualine_b = {
+          { "branch" },
+        },
         lualine_c = {
           { "filename", path = 1, symbols = { modified = " [+] ", readonly = "", unnamed = "" } },
         },

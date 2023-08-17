@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd("FileType", {
       0,
       "n",
       "<F8>",
-      "<ESC>:w<CR>:split<CR>:resize 12<CR>:te java -cp out %<CR>i",
+      ":w<CR>:split<CR>:resize 12<CR>:let current_file = fnamemodify(expand('%'), ':~:.:r')<CR>:execute 'te java ' . substitute(current_file, '/', '.', 'g')<CR>i",
       { silent = true, noremap = true }
     )
   end,
