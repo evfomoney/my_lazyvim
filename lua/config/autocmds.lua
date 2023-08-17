@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd("FileType", {
       0,
       "n",
       "<F8>",
-      "<ESC>:w<CR>:split<CR>:resize 12<CR>:te java %:t:r<CR>i",
+      "<ESC>:w<CR>:split<CR>:resize 12<CR>:te java -cp out %<CR>i",
       { silent = true, noremap = true }
     )
   end,
