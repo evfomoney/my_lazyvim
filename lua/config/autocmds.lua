@@ -41,3 +41,18 @@ vim.api.nvim_create_autocmd("FileType", {
     )
   end,
 })
+
+-- **************************   for Chinese_input  *******************************
+
+-- 在 NeoVim 启动时执行
+vim.cmd([[autocmd VimEnter * !ibus engine xkb:us::eng]])
+
+-- 当进入插入模式时执行
+-- vim.cmd([[autocmd InsertEnter * :silent !ibus engine libpinyin]])
+vim.cmd([[autocmd InsertEnter * :silent !ibus engine xkb:us::eng]])
+
+-- 当退出插入模式时执行
+vim.cmd([[autocmd InsertLeave * :silent !ibus engine xkb:us::eng]])
+
+-- 在 NeoVim 关闭时执行
+vim.cmd([[autocmd VimLeave * !ibus engine xkb:us::eng]])
