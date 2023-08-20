@@ -7,4 +7,4 @@ local map = vim.keymap.set
 local opt = { noremap = true, silent = true }
 
 --****************** basic **************************
-map("i", ",a", "<ESC>", opt)
+-- map("i", ",a", "<ESC>", opt) ： because the im-select : the <ESC> has too much additional power
