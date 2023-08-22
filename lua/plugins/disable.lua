@@ -1,3 +1,4 @@
 return {
-  {"folke/tokyonight.nvim", enable=false}
+  { "folke/tokyonight.nvim", enabled = false },
+  { "goolord/alpha-nvim", enabled = false },
 }
