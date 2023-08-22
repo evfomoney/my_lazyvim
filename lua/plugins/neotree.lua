@@ -11,7 +11,4 @@ return {
       },
     }
   end,
-  ops = {
-    open_on_startup = true,
-  },
 }
