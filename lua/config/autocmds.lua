@@ -2,6 +2,19 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
+-- **************************   for basic  *******************************
+
+-- window10 剪切板(for wsl2)
+vim.cmd([[
+augroup fix_yank
+    autocmd!
+    autocmd TextYankPost * if v:event.operator ==# 'y' | call system('/mnt/c/Windows/System32/clip.exe', @0) | endif
+augroup END
+]])
+
+-- for markdown-preview lazyload
+vim.cmd([[autocmd BufWritePre *.md :silent! execute ':silent! write !sleep 1s']])
+
 -- **************************   for run_key  *******************************
 
 -- python
