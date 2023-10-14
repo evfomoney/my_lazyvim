@@ -4,19 +4,25 @@ return {
     servers = {
       jsonls = {},
 
-      -- python
-      pyright = {
-        settings = {
-          pyright = {
-            autoImportCompletion = true,
-            python = {
-              analysis = {
-                autoSearchPaths = true,
-                useLibraryCodeForTypes = true,
-              },
-            },
-          },
-        },
+      -- -- python // there has some problem for me: the ls is too strict for me
+      -- pyright = {
+      --   settings = {
+      --     pyright = {
+      --       autoImportCompletion = true,
+      --       python = {
+      --         analysis = {
+      --           autoSearchPaths = true,
+      --           useLibraryCodeForTypes = true,
+      --         },
+      --       },
+      --     },
+      --   },
+      --   root_dir = function()
+      --     return vim.fn.getcwd()
+      --   end,
+      -- },
+
+      jedi_language_server = {
         root_dir = function()
           return vim.fn.getcwd()
         end,

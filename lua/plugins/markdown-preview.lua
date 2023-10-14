@@ -13,7 +13,7 @@ return {
       vim.g.mkdp_browser = ""
       vim.g.mkdp_echo_preview_url = true
       vim.g.mkdp_page_title = "${name}"
-      vim.g.mkdp_theme = "light"
+      vim.g.mkdp_theme = "dark"
     end,
   },
 }

@@ -7,7 +7,7 @@ return {
 
       -- for python
       "flake8",
-      "pyright",
+      -- "pyright", // unfriendly to machine study
 
       -- for java
       "jdtls",
