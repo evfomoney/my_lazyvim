@@ -1,5 +1,7 @@
 local logo = [[
 
+
+
 ██╗   ██╗    ██╗    ███╗   ███╗
 ██║   ██║    ██║    ████╗ ████║
 ██║   ██║    ██║    ██╔████╔██║
@@ -7,9 +9,11 @@ local logo = [[
  ╚████╔╝     ██║    ██║ ╚═╝ ██║
   ╚═══╝      ╚═╝    ╚═╝     ╚═╝
                                
+
+
 ]]
 return {
-  "glepnir/dashboard-nvim",
+  "nvimdev/dashboard-nvim",
   opts = {
     config = {
       header = vim.split(logo, "\n"),
