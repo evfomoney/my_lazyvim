@@ -16,19 +16,15 @@ augroup END
 vim.cmd([[autocmd BufWritePre *.md :silent! execute ':silent! write !sleep 1s']])
 
 -- **************************   for run_key  *******************************
+-- if you need a smaller panel
+-- ":w<CR>:split<CR>:resize 12<CR>:let current_file = fnamemodify(expand('%'), ':~:.:r')<CR>:execute 'te java ' . substitute(current_file, '/', '.', 'g')<CR>i",
 
 -- python
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "python",
   callback = function()
-    vim.api.nvim_buf_set_keymap(
-      0,
-      "n",
-      "<F7>",
-      ":w<CR>:split<CR>:resize 12<CR>:te time python3 %<CR>i",
-      { silent = true, noremap = true }
-    )
+    vim.api.nvim_buf_set_keymap(0, "n", "<F7>", ":w<CR>:te time python3 %<CR>i", { silent = true, noremap = true })
   end,
 })
 
@@ -37,20 +33,21 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "java",
   callback = function()
-    vim.api.nvim_buf_set_keymap(
-      0,
-      "n",
-      "<F7>",
-      ":w<CR>:split<CR>:resize 12<CR>:te time javac -d out %<CR>i",
-      { silent = true, noremap = true }
-    )
+    vim.api.nvim_buf_set_keymap(0, "n", "<F7>", ":w<CR>:te time javac -d out %<CR>i", { silent = true, noremap = true })
 
     vim.api.nvim_buf_set_keymap(
       0,
       "n",
       "<F8>",
-      ":w<CR>:split<CR>:resize 12<CR>:let current_file = fnamemodify(expand('%'), ':~:.:r')<CR>:execute 'te java ' . substitute(current_file, '/', '.', 'g')<CR>i",
+      ":w<CR>:let current_file = fnamemodify(expand('%'), ':~:.:r')<CR>:execute 'te java ' . substitute(current_file, '/', '.', 'g')<CR>i",
       { silent = true, noremap = true }
     )
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "c",
+  callback = function()
+    vim.api.nvim_buf_set_keymap(0, "n", "<F7>", ":w<CR>:te gcc *.c<CR>i", { silent = true, noremap = true })
   end,
 })
